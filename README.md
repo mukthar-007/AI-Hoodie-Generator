@@ -24,7 +24,7 @@ An AI-powered Laravel application that generates hoodie designs based on a user�
 
 - **Language Generation:** OpenAI GPT API
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. ### Clone the repo
 
