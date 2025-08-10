@@ -40,9 +40,10 @@ An AI-powered Laravel application that generates hoodie designs based on a userâ
 3. ### Set environment variables in .env:
 
     OPENAI_API_KEY=your_openai_api_key
+   
     PRINTFUL_API_KEY=your_printful_api_key
 
-4. ### Serve the application
+5. ### Serve the application
 
     php artisan serve
 
