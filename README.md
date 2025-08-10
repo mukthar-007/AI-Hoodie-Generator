@@ -64,7 +64,8 @@ An AI-powered Laravel application that generates hoodie designs based on a user�
     http://localhost:8000/ai-hoodie
 - Enter a prompt → Click Generate Hoodie → View results.
 
-<img width="743" height="414" alt="image" src="https://github.com/user-attachments/assets/47def8b3-0c33-42e7-aad5-251ee7d68c20" />
+<img width="1465" height="898" alt="image" src="https://github.com/user-attachments/assets/62fb7f24-5370-4a10-85b2-c7af4ba697d8" />
+
 
 
 ## API Usage
