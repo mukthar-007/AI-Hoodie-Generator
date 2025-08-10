@@ -35,9 +35,10 @@ An AI-powered Laravel application that generates hoodie designs based on a userâ
 2. ### Install dependencies
 
     composer install
+   
     npm install && npm run dev
 
-3. ### Set environment variables in .env:
+4. ### Set environment variables in .env:
 
     OPENAI_API_KEY=your_openai_api_key
    
