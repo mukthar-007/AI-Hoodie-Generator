@@ -1,8 +1,8 @@
-# 🧠 AI Hoodie Generator
+# AI Hoodie Generator
 
 An AI-powered Laravel application that generates hoodie designs based on a user’s text prompt, creates product mockups, and prepares titles/descriptions — ready for e-commerce publishing.
 
-## 🚀 Features
+## Features
 
 - Generate custom hoodie designs using OpenAI’s DALL·E API.
 
@@ -48,7 +48,7 @@ An AI-powered Laravel application that generates hoodie designs based on a user�
 
     php artisan serve
 
-## 🖥 How It Works (Approach)
+## How It Works (Approach)
 1. User enters a text prompt (e.g., "Cyberpunk lion hoodie").
 
 2. AI generates an image using DALL·E.
@@ -77,7 +77,7 @@ An AI-powered Laravel application that generates hoodie designs based on a user�
 
 
 
-## 🛡 Error Handling
+## Error Handling
 - **Invalid prompt** → returns 422 with validation errors.
 
 - **AI API error** → returns 500 with error details.
