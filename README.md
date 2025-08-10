@@ -1,64 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🧠 AI Hoodie Generator
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+An AI-powered Laravel application that generates hoodie designs based on a user’s text prompt, creates product mockups, and prepares titles/descriptions — ready for e-commerce publishing.
 
-## About Laravel
+## 🚀 Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Generate custom hoodie designs using OpenAI’s DALL·E API.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Upload generated images to Printful for printing & fulfillment.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Automatically create mockups of hoodies with the AI-generated design.
 
-## Learning Laravel
+- Generate product titles & descriptions using GPT.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Supports Web UI and REST API access.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Tech Stack
 
-## Laravel Sponsors
+- **Backend:** Laravel 11
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **AI Image Generation:** OpenAI DALL·E API
 
-### Premium Partners
+- **E-Commerce Mockups:** Printful API
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- **Language Generation:** OpenAI GPT API
 
-## Contributing
+## ⚙️ Installation & Setup
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. ### Clone the repo
 
-## Code of Conduct
+    git clone https://github.com/mukthar-007/AI-Hoodie-Generator.git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    cd hoodie-generator
 
-## Security Vulnerabilities
+2. ### Install dependencies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    composer install
+    npm install && npm run dev
 
-## License
+3. ### Set environment variables in .env:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    OPENAI_API_KEY=your_openai_api_key
+    PRINTFUL_API_KEY=your_printful_api_key
+
+4. ### Serve the application
+
+    php artisan serve
+
+## 🖥 How It Works (Approach)
+1. User enters a text prompt (e.g., "Cyberpunk lion hoodie").
+
+2. AI generates an image using DALL·E.
+
+3. The image is uploaded to Printful as a design file.
+
+4. Printful creates a hoodie mockup using the design.
+
+5. GPT generates a product title & description for the hoodie.
+
+6. The system returns JSON (API) or renders preview (Web).
+
+##  Web Usage
+- **Visit:**
+    http://localhost:8000/ai-hoodie
+- Enter a prompt → Click Generate Hoodie → View results.
+
+<img width="743" height="414" alt="image" src="https://github.com/user-attachments/assets/47def8b3-0c33-42e7-aad5-251ee7d68c20" />
+
+
+## API Usage
+- **Endpoint:** POST /api/ai-hoodie
+
+## 🛡 Error Handling
+- **Invalid prompt** → returns 422 with validation errors.
+
+- **AI API error** → returns 500 with error details.
+
+- **Printful API error** → returns 500 with message from Printful.
+
+- All exceptions are wrapped in try/catch for safety.
